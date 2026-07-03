@@ -217,8 +217,14 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 
-# Local training data artifacts
-/generated/
+# Local training data artifacts. Keep the redistributable pure-synthetic JSONL
+# files tracked, but do not track external-source-derived conversions, local
+# evaluation output, or ad-hoc generated variants.
+/generated/*
+!/generated/
+!/generated/synthetic_date_id_jp.jsonl
+!/generated/synthetic_structured_pii_jp.jsonl
+!/generated/synthetic_boundary_jp.jsonl
 /raw/
 /runs/
 /outputs/
